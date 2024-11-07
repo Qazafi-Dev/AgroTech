@@ -1,0 +1,36 @@
+/* Widget.css */
+.widget {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.widget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.weather-widget,
+.soil-widget,
+.crop-widget,
+.yield-widget {
+  position: relative;
+  overflow: hidden;
+}
+
+.widget h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.widget p {
+  font-size: 16px;
+  color: #333;
+}
+.chat-widget-size {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
