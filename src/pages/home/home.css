@@ -1,0 +1,28 @@
+.App {
+  background-color: rgb(207, 243, 201);
+  flex: auto;
+}
+
+.header {
+  display: flex; /* establish flex container */
+  flex-direction: row; /* default value; can be omitted */
+  flex-wrap: nowrap; /* default value; can be omitted */
+  justify-content: space-between; /* switched from default (flex-start, see below) */
+  align-items: start;
+}
+.header div {
+  display: block;
+  /* float: left; */
+  /* border: 1px solid #000; */
+  align-items: flex-start;
+  margin-left: 20px;
+  justify-content: start;
+}
+.head h1 {
+  color: rgb(49, 50, 50);
+  text-align: center;
+}
+.head p {
+  color: rgb(49, 50, 50);
+  text-align: start;
+}

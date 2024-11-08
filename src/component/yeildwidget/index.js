@@ -1,95 +1,69 @@
-// YieldPredictionWidget.js
-import React, { useState, useEffect } from "react";
-import "chart.js/auto";
+// YieldProductionWidget.js
+import React from "react";
 import { Bar } from "react-chartjs-2";
-import Tooltip from "@mui/material/Tooltip";
 import "../widget.css";
 
-const YieldPredictionWidget = () => {
-  const [yieldData, setYieldData] = useState({
-    labels: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ],
+const YieldProductionWidget = () => {
+  // Sample data for different crops
+  const yieldData = {
+    labels: ["Wheat", "Corn", "Rice", "Soybean", "Barley", "Oats"],
     datasets: [
       {
-        label: "Yield Prediction (kg/acre)",
-        data: [
-          900, 1050, 1150, 1000, 1300, 1250, 1400, 1350, 1200, 1450, 1100, 1300,
+        label: "Yield Production (kg/acre)",
+        data: [1200, 1500, 1100, 1300, 900, 800],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.6)", // Wheat
+          "rgba(54, 162, 235, 0.6)", // Corn
+          "rgba(255, 206, 86, 0.6)", // Rice
+          "rgba(75, 192, 192, 0.6)", // Soybean
+          "rgba(153, 102, 255, 0.6)", // Barley
+          "rgba(255, 159, 64, 0.6)", // Oats
         ],
-        backgroundColor: "#3a5f0b",
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderWidth: 1,
       },
     ],
-  });
+  };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Simulate data update by modifying random data points each month
-      setYieldData((prevData) => ({
-        ...prevData,
-        datasets: [
-          {
-            ...prevData.datasets[0],
-            data: prevData.datasets[0].data.map(
-              (value) => value + Math.round(Math.random() * 100 - 50)
-            ),
-          },
-        ],
-      }));
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: "Yield (kg/acre)",
+        },
+      },
+      x: {
+        title: {
+          display: true,
+          text: "Crops",
+        },
+      },
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: true },
+    },
+  };
 
   return (
-    <div className="widget yield-widget">
-      <h3>Yield Prediction</h3>
-      <Tooltip
-        title="Predicted monthly yield based on soil and weather data"
-        arrow
-      >
-        <p>Expected Yield: 1200 kg/acre</p>
-      </Tooltip>
+    <div className="widget yield-production-widget">
+      <h3>Yield Production by Crop</h3>
       <div className="chat-widget-size">
-        <Bar
-          data={yieldData}
-          options={{
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-              y: {
-                beginAtZero: true,
-                title: {
-                  display: true,
-                  text: "Yield (kg/acre)",
-                },
-              },
-              x: {
-                title: {
-                  display: true,
-                  text: "Month",
-                },
-              },
-            },
-            plugins: {
-              legend: { display: false },
-              tooltip: { enabled: true },
-            },
-          }}
-        />
+        <Bar data={yieldData} options={options} />
       </div>
     </div>
   );
 };
 
-export default YieldPredictionWidget;
+export default YieldProductionWidget;

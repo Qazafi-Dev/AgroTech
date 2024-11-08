@@ -1,0 +1,62 @@
+/* Header.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #bbc0b5;
+  color: #ffffff; /* White text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-left h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+  color: #ffeb3b; /* Golden yellow title color */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.notification-icon {
+  font-size: 1.8rem;
+  color: #ffeb3b; /* Golden yellow for the bell icon */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.notification-icon:hover {
+  color: #ff9800; /* Slightly darker yellow on hover */
+}
+
+/* Adding responsive adjustments */
+@media (max-width: 768px) {
+  .header-left h1 {
+    font-size: 1.2rem;
+  }
+
+  .user-name {
+    font-size: 1rem;
+  }
+
+  .notification-icon {
+    font-size: 1.5rem;
+  }
+}

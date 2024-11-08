@@ -4,16 +4,15 @@ import WeatherWidget from "../../component/weatherwidget";
 import SoilHealthWidget from "../../component/soilhealthwidget";
 import CropGrowthWidget from "../../component/cropgrowthwidget";
 import YieldPredictionWidget from "../../component/yeildwidget";
+import "./home.css";
+import Header from "../../component/header";
 
 export default function Home() {
   return (
     <div className="App">
       {/* <Sidebar /> */}
       <div className="main-content">
-        <header className="header">
-          <h1>Dashboard Overview</h1>
-          <p>Welcome back, User!</p>
-        </header>
+        {/* <Header title="Agriculture Dashboard" userName="Qazafi Sheikh" /> */}
         <div className="dashboard">
           <WeatherWidget />
           <SoilHealthWidget />
