@@ -14,10 +14,10 @@ export default function Home() {
       <div className="main-content">
         {/* <Header title="Agriculture Dashboard" userName="Qazafi Sheikh" /> */}
         <div className="dashboard">
-          <WeatherWidget />
+          {/* <WeatherWidget />
           <SoilHealthWidget />
           <CropGrowthWidget />
-          <YieldPredictionWidget />
+          <YieldPredictionWidget /> */}
         </div>
       </div>
     </div>

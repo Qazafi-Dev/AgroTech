@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Sidebar />
+        {/* <Sidebar /> */}
         <div className="main-content">
           <Header title="Agriculture Dashboard" userName="Qazafi Sheikh" />
           <div className="page-content">

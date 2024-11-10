@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #bbc0b5;
+  /* background-color: #bbc0b5; */
   color: #ffffff; /* White text color */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
